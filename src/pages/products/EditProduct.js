@@ -21,7 +21,8 @@ export function EditProduct() {
     }, []);
     return (
         <>
-            <h1>EditProduct {id}</h1>
+        <center>
+            <h1>Edit Product {id}</h1>
             <Formik initialValues={
                 product
             } enableReinitialize={true} onSubmit={editProduct}>
@@ -32,9 +33,10 @@ export function EditProduct() {
                     <span style={{color: 'red'}}><ErrorMessage name={'price'}/></span><br/>
                     <Field name={"description"} placeholder={"Description"} type={"text"}/>
                     <span style={{color: 'red'}}><ErrorMessage name={'description'}/></span><br/>
-                    <button type={"submit"}>Edit</button>
+                    <button type={"submit"} className={"btn btn-primary"}>Edit</button>
                 </Form>
             </Formik>
+        </center>
         </>
     )
 }

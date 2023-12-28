@@ -13,6 +13,7 @@ export function AddProduct() {
     }
     return (
         <>
+            <center>
             <h1>Add Product</h1>
             <Formik initialValues={
                 {
@@ -28,9 +29,10 @@ export function AddProduct() {
                     <span style={{color: 'red'}}><ErrorMessage name={'price'}/></span><br/>
                     <Field name={"description"} placeholder={"Description"} type={"text"}/>
                     <span style={{color: 'red'}}><ErrorMessage name={'description'}/></span><br/>
-                    <button type={"submit"}>Add</button>
+                    <button type={"submit"} className={"btn btn-primary"}>Add</button>
                 </Form>
             </Formik>
+            </center>
         </>
     )
 }

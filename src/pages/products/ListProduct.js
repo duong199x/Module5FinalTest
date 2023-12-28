@@ -21,22 +21,24 @@ export function ListProduct() {
     }
     return (
         <>
-            <h1>ListProduct</h1>
-            <table border={1}>
+            <center>
+                <h1>List Product</h1>
+            </center>
+            <table className={"table"}>
                 <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Title</th>
-                    <th>Price</th>
-                    <th>Description</th>
-                    <th colSpan={2}>Action</th>
+                    <th scope={"col"}>Id</th>
+                    <th scope={"col"}>Title</th>
+                    <th scope={"col"}>Price</th>
+                    <th scope={"col"}>Description</th>
+                    <th colSpan={2} scope={"col"}>Action</th>
                 </tr>
                 </thead>
                 <tbody>
 
                 {products.map((item) => (
                     <tr key={item.id}>
-                        <td>{item.id}</td>
+                        <td scope={"row"}>{item.id}</td>
                         <td>
                             <Link to={`/products/detail/${item.id}`}>
                                 {item.title}
@@ -46,12 +48,12 @@ export function ListProduct() {
                         <td>{item.description}</td>
                         <td>
                             <Link to={`/products/edit/${item.id}`}>
-                                <button>Edit</button>
+                                <button className={"btn btn-primary"}>Edit</button>
                             </Link>
 
                         </td>
                         <td>
-                            <button onClick={() => removeProduct(item.id)}> Delete</button>
+                            <button onClick={() => removeProduct(item.id)} className={"btn btn-danger"}> Delete</button>
                         </td>
                     </tr>
                 ))}
